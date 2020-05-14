@@ -12,6 +12,20 @@ Template Multi Level Login
 * Username : user
 * Password : user
 
+## 📦 Sources
+
+BaseCodeigniter currently uses 4 sources to build the app's. We're continuously adding
+sources, but the app's open-source nature also allows you to add your own when
+desired. This can be done in
+[BaseCodeigniter](https://github.com/L200160026/BaseCodeigniter).
+
+###### Standard sources:
+
+* [AdminLTE](https://github.com/ColorlibHQ/AdminLTE)
+* [FlipClock](https://github.com/objectivehtml/FlipClock)
+* [ParticlesJs](https://github.com/VincentGarreau/particles.js/)
+* [SweetAlert2](https://github.com/sweetalert2/sweetalert2)
+
 ## 👨‍👨‍👧‍👦 Open-source
 
 ## 🔑 License
