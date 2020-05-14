@@ -55,7 +55,7 @@ class M_Account extends CI_Model {
     }
 
     if (isset($post["_checkfile_"])) {
-      $rules[] = array( 'field' => '_image_',
+      $rules[] = array( 'field' => '_checkfile_',
                         'label' => 'Image',
                         'rules' => 'callback_checkFileImg');
     }
