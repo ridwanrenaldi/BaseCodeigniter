@@ -16,4 +16,4 @@
 ## 🔑 License
 
 [MIT](https://github.com/L200160026/BaseCodeigniter/blob/master/license.txt) ©
-[Giel Cobben](https://instagram.com/rid1bdbx)
+[RID1](https://instagram.com/rid1bdbx)
