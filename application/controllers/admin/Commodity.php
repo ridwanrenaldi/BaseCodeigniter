@@ -55,7 +55,7 @@ class Commodity extends CI_Controller {
     } else {
       if ($encrypt_id != null) {
         $data["session"] = $sess;
-        $data["sidebar"] = "commodity-add";
+        $data["sidebar"] = NULL;
         $data["encrypt_id"] = $encrypt_id;
 
         $secret_key = $this->M_Commodity->secret_key ;
@@ -69,7 +69,7 @@ class Commodity extends CI_Controller {
           $this->form_validation->set_rules($this->M_Commodity->rules());
           if ($this->form_validation->run() === TRUE) {
             $this->session->set_flashdata("notif", $this->M_Commodity->update($commodity_id));
-            redirect(site_url("admin/commodity/edit"),"refresh");
+            redirect(site_url("admin/commodity/edit/$encrypt_id"),"refresh");
           } else {
             $data["notif"] = array("status" => "error", "message" => str_replace("\n", "", validation_errors('<li>','</li>')));
             if ($this->session->flashdata("notif")) {

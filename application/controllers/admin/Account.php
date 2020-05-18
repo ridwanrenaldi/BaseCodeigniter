@@ -146,7 +146,7 @@ class Account extends CI_Controller {
           redirect(site_url("admin/account/table"),"refresh");
         } else {
           $data["session"] = $sess;
-          $data["sidebar"] = "account-edit";
+          $data["sidebar"] = NULL;
           $data["encrypt_id"] = $encrypt_id;
 
           $this->form_validation->set_rules($this->M_Account->rules($this->input->post()));
