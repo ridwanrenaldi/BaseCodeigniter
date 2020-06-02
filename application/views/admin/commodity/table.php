@@ -138,8 +138,66 @@
         type: "POST",
         dataSrc: ""
       },
+      dom: 'Blfrtip',
+      buttons: [
+        {
+          extend      : 'copy',
+          text        : '<i class="far fa-copy"></i> Copy',
+          titleAttr   : 'Copy',
+          className   : 'btn btn-default btn-sm'
+        },
+        {
+          extend      : 'csv',
+          title       : 'Data Commodity',
+          text        : '<i class="far fa-file"></i> CSV',
+          titleAttr   : 'CSV',
+          className   : 'btn btn-default btn-sm',
+          exportOptions: {
+              columns: ':visible'
+          }
+        },
+        {
+          extend      : 'excel',
+          title       : 'Data Commodity',
+          text        : '<i class="far fa-file-excel"></i> Excel',
+          titleAttr   : 'Excel',
+          className   : 'btn btn-default btn-sm',
+          exportOptions: {
+              columns: ':visible'
+          }
+        },
+        {
+          extend      : 'pdf',
+          title       : 'Data Commodity',
+          oriented    : 'potrait',
+          pageSize    : 'LEGAL',
+          download    : 'open',
+          text        : '<i class="far fa-file-pdf"></i> PDF',
+          titleAttr   : 'PDF',
+          className   : 'btn btn-default btn-sm',
+          exportOptions: {
+              columns: ':visible'
+          }
+        },               
+        {
+          extend      : 'print',
+          title       : 'Data Commodity',
+          text        : '<i class="fas fa-print"></i> Print',
+          titleAttr   : 'Print',
+          className   : 'btn btn-default btn-sm',
+          exportOptions: {
+              columns: ':visible'
+          }
+        }
+      ],
       columns: [
-        {data: null},
+        {
+          data: "id",
+          render: function (data, type, row, meta) {
+            console.log(meta);
+              return meta.row + meta.settings._iDisplayStart + 1;
+          }
+        },
         {data: "commodity_name"},
         {data: "commodity_type"},
         {data: "commodity_price"},
@@ -160,11 +218,11 @@
     });
 
     // ===== How to make a sequence number on a datatable =====
-    commodity.on( 'order.dt search.dt', function () {
-      commodity.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-          cell.innerHTML = i+1;
-      } );
-    } ).draw();
+    // commodity.on( 'order.dt search.dt', function () {
+    //   commodity.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+    //       cell.innerHTML = i+1;
+    //   } );
+    // } ).draw();
 
   });
 </script>
