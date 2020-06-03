@@ -67,7 +67,7 @@ Contact Me : @rid1bdbx (instagram)
           </div>
           <div class="row" style="margin-bottom:10px;">
             <div class="col-12">
-              <a href="https://github.com/L200160026/Base-Codeigniter" target="_blank">
+              <a href="https://github.com/L200160026/BaseCodeigniter" target="_blank">
                 <button type="button" class="btn btn-primary btn-block">
                   <i class="fab fa-github-alt"></i>
                   <span class="border-left" style="margin-right: 5px; margin-left: 5px;"></span>
