@@ -142,9 +142,19 @@
       buttons: [
         {
           extend      : 'copy',
+          // title       : 'Data Commodity',
           text        : '<i class="far fa-copy"></i> Copy',
           titleAttr   : 'Copy',
-          className   : 'btn btn-default btn-sm'
+          className   : 'btn btn-default btn-sm',
+          exportOptions: {
+            columns: [ 0, 1, 2, 3]
+          },
+          title: function(){
+            let current_datetime = new Date()
+            let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
+            console.log(formatted_date)
+            return 'Data Commodity (' + formatted_date + ')';
+          },
         },
         {
           extend      : 'csv',
@@ -153,8 +163,14 @@
           titleAttr   : 'CSV',
           className   : 'btn btn-default btn-sm',
           exportOptions: {
-              columns: ':visible'
-          }
+            columns: [ 0, 1, 2, 3]
+          },
+          filename: function(){
+            let current_datetime = new Date()
+            let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
+            console.log(formatted_date)
+            return 'Data Commodity (' + formatted_date + ')';
+          },
         },
         {
           extend      : 'excel',
@@ -163,21 +179,33 @@
           titleAttr   : 'Excel',
           className   : 'btn btn-default btn-sm',
           exportOptions: {
-              columns: ':visible'
-          }
+            columns: [ 0, 1, 2, 3]
+          },
+          filename: function(){
+            let current_datetime = new Date()
+            let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
+            console.log(formatted_date)
+            return 'Data Commodity (' + formatted_date + ')';
+          },
         },
         {
           extend      : 'pdf',
           title       : 'Data Commodity',
           oriented    : 'potrait',
           pageSize    : 'LEGAL',
-          download    : 'open',
+          // download    : 'open',
           text        : '<i class="far fa-file-pdf"></i> PDF',
           titleAttr   : 'PDF',
           className   : 'btn btn-default btn-sm',
           exportOptions: {
-              columns: ':visible'
-          }
+            columns: [ 0, 1, 2, 3]
+          },
+          filename: function(){
+            let current_datetime = new Date()
+            let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
+            console.log(formatted_date)
+            return 'Data Commodity (' + formatted_date + ')';
+          },
         },               
         {
           extend      : 'print',
@@ -186,16 +214,16 @@
           titleAttr   : 'Print',
           className   : 'btn btn-default btn-sm',
           exportOptions: {
-              columns: ':visible'
+            columns: [ 0, 1, 2, 3]
           }
         }
       ],
       columns: [
         {
-          data: "id",
+          data: "commodity_id",
           render: function (data, type, row, meta) {
-            console.log(meta);
-              return meta.row + meta.settings._iDisplayStart + 1;
+            // console.log(meta);
+            return meta.row + meta.settings._iDisplayStart + 1;
           }
         },
         {data: "commodity_name"},

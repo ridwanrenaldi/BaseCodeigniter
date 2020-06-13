@@ -155,7 +155,7 @@ class Account extends CI_Controller {
             if ($sess["id"] == $account_id) {
               $this->M_Auth->refreshSession($account_id);
             }
-            redirect(site_url("admin/account/edit/$encrypt_id"),"refresh");
+            redirect(site_url("admin/account/edit/  "),"refresh");
 
           } else {
             $data["notif"] = array("status" => "error", "message" => str_replace("\n", "", validation_errors('<li>','</li>')));

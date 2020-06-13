@@ -14,6 +14,7 @@ class API extends CI_Controller {
     $this->load->model("M_Auth");
     $this->load->model("M_Account");
     $this->load->model("M_Commodity");
+    $this->load->model("M_Student");
   }
 
   public function account($mode=null){
@@ -200,6 +201,62 @@ class API extends CI_Controller {
           if ($commodity != null){
             $this->db->where("commodity_id", $id);
             if($this->db->delete("commodity")){
+              $response = array(
+                "status" => "success",
+                "message" => "Success delete data",
+              );
+            } else {
+              $response = array(
+                "status" => "error",
+                "message" => "Failed delete data",
+              );
+            }
+          } else {
+            $response = array(
+              "status" => "error",
+              "message" => "Data not found!",
+            );
+          }
+        } else {
+          $response = array(
+            "status" => "error",
+            "message" => "Data not found!",
+          );
+        }
+        echo json_encode($response);
+      }
+    }
+  }
+
+  public function student($mode=null){
+    $sess = $this->M_Auth->session(array("root","admin"));
+    if ($sess === FALSE) {
+      redirect(site_url("admin/dashboard/logout"),"refresh");
+    } else {
+      $secret_key = $this->M_Student->secret_key ;
+      $secret_iv = $this->M_Student->secret_iv ;
+
+      if (strtolower($mode) == "data") {
+        $query = $this->db->get("student");
+        if ($query->num_rows() > 0) {
+          $data = $query->result_array();
+          foreach ($data as $key => $value) {
+            $data[$key]["student_id"] = encrypt_decrypt("encrypt", $value["student_id"], $secret_key, $secret_iv);
+          }
+          echo json_encode($data);
+        } else {
+          echo json_encode(false);
+        }
+      } 
+
+      elseif (strtolower($mode) == "delete"){
+        $post = $this->input->post();
+        if (!empty($post["id"])) {
+          $id = encrypt_decrypt("decrypt", $post["id"], $secret_key, $secret_iv);
+          $student = $this->M_Student->getById($id);
+          if ($student != null){
+            $this->db->where("student_id", $id);
+            if($this->db->delete("student")){
               $response = array(
                 "status" => "success",
                 "message" => "Success delete data",

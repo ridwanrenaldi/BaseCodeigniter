@@ -84,6 +84,30 @@
             </ul>
           </li>
 
+          <li class="nav-item has-treeview <?php if($sidebar=='student-table' || $sidebar=='student-add') { echo 'menu-open'; } ?>">
+            <a href="#" class="nav-link <?php if($sidebar=='student-table' || $sidebar=='student-add') { echo 'active'; } ?>">
+              <i class="nav-icon fas fa-user-graduate"></i>
+              <p>
+                Student
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo site_url('admin/student/table') ?>" class="nav-link <?php if($sidebar=='student-table') { echo 'active'; } ?>">
+                  <i class="fa fa-caret-right nav-icon" style="margin-left: 25px;"></i>
+                  <p>Table</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('admin/student/add') ?>" class="nav-link <?php if($sidebar=='student-add') { echo 'active'; } ?>">
+                  <i class="fa fa-caret-right nav-icon" style="margin-left: 25px;"></i>
+                  <p>Add</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
 
         </ul>
       </nav>

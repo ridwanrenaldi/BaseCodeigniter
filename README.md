@@ -24,7 +24,7 @@ desired. This can be done in
 ###### Standard sources:
 
 * [AdminLTE](https://github.com/ColorlibHQ/AdminLTE)
-* [FlipClock](https://github.com/objectivehtml/FlipClock)
+* [PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
 * [ParticlesJs](https://github.com/VincentGarreau/particles.js/)
 * [SweetAlert2](https://github.com/sweetalert2/sweetalert2)
 
