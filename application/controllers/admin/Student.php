@@ -116,8 +116,4 @@ class Student extends CI_Controller {
       }
     }
   }
-  
-  public function coba(){
-    var_dump(range('A','H'));
-  }
 }
