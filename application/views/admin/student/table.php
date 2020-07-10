@@ -146,7 +146,11 @@
     })
   }
   
-
+  function filename(name){
+    let current_datetime = new Date()
+    let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
+    return name +' (' + formatted_date + ')';
+  }
 
   $(document).ready(function(){
     student = $("#_student_").DataTable({
@@ -167,12 +171,7 @@
           exportOptions: {
             columns: [ 0, 1, 2, 3, 4, 5, 6, 7]
           },
-          title: function(){
-            let current_datetime = new Date()
-            let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
-            console.log(formatted_date)
-            return 'Data Student (' + formatted_date + ')';
-          },
+          title: filename('Data Student'),
         },
         {
           extend      : 'csv',
@@ -183,12 +182,7 @@
           exportOptions: {
             columns: [ 0, 1, 2, 3, 4, 5, 6, 7]
           },
-          filename: function(){
-            let current_datetime = new Date()
-            let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
-            console.log(formatted_date)
-            return 'Data Student (' + formatted_date + ')';
-          },
+          filename: filename('Data Student'),
         },
         {
           extend      : 'excel',
@@ -199,12 +193,7 @@
           exportOptions: {
             columns: [ 0, 1, 2, 3, 4, 5, 6, 7]
           },
-          filename: function(){
-            let current_datetime = new Date()
-            let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
-            console.log(formatted_date)
-            return 'Data Student (' + formatted_date + ')';
-          },
+          filename: filename('Data Student'),
         },
         {
           extend      : 'pdf',
@@ -218,12 +207,7 @@
           exportOptions: {
             columns: [ 0, 1, 2, 3, 4, 5, 6, 7]
           },
-          filename: function(){
-            let current_datetime = new Date()
-            let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
-            console.log(formatted_date)
-            return 'Data Student (' + formatted_date + ')';
-          },
+          filename: filename('Data Student'),
         },               
         {
           extend      : 'print',

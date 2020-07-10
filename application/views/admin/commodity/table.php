@@ -129,7 +129,11 @@
     })
   }
   
-
+  function filename(name){
+    let current_datetime = new Date()
+    let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
+    return name +' (' + formatted_date + ')';
+  }
 
   $(document).ready(function(){
     commodity = $("#_commodity_").DataTable({
@@ -149,12 +153,7 @@
           exportOptions: {
             columns: [ 0, 1, 2, 3]
           },
-          title: function(){
-            let current_datetime = new Date()
-            let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
-            console.log(formatted_date)
-            return 'Data Commodity (' + formatted_date + ')';
-          },
+          title: filename('Data Commodity'),
         },
         {
           extend      : 'csv',
@@ -165,12 +164,7 @@
           exportOptions: {
             columns: [ 0, 1, 2, 3]
           },
-          filename: function(){
-            let current_datetime = new Date()
-            let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
-            console.log(formatted_date)
-            return 'Data Commodity (' + formatted_date + ')';
-          },
+          filename: filename('Data Commodity'),
         },
         {
           extend      : 'excel',
@@ -181,12 +175,7 @@
           exportOptions: {
             columns: [ 0, 1, 2, 3]
           },
-          filename: function(){
-            let current_datetime = new Date()
-            let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
-            console.log(formatted_date)
-            return 'Data Commodity (' + formatted_date + ')';
-          },
+          filename: filename('Data Commodity'),
         },
         {
           extend      : 'pdf',
@@ -200,12 +189,7 @@
           exportOptions: {
             columns: [ 0, 1, 2, 3]
           },
-          filename: function(){
-            let current_datetime = new Date()
-            let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
-            console.log(formatted_date)
-            return 'Data Commodity (' + formatted_date + ')';
-          },
+          filename: filename('Data Commodity'),
         },               
         {
           extend      : 'print',
