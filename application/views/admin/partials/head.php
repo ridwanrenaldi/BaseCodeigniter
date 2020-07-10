@@ -1,3 +1,12 @@
+<!-- 
+===============================================================
+BaseCodeigniter
+Author : Ridwan Renaldi (RID1)
+Date Created : 10/05/2020
+License : freely distributed/modified with credit attribution.
+Contact Me : @rid1bdbx (instagram)
+=============================================================== 
+-->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Control Panel</title>
