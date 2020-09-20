@@ -93,7 +93,7 @@ class API extends CI_Controller {
             $account = $this->M_Account->getById($id);
             if ($account != null){
               $oldpath = "./uploads/account/".$account["account_image"];
-              if (file_exists($oldpath)) {
+              if ($account["account_image"] != "default.png" && file_exists($oldpath)) {
                 unlink($oldpath);
               }
               $this->db->where("account_id", $id);
